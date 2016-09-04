@@ -2,9 +2,8 @@
 public class HelloWorld 
 {
 	private String str="Hello World!";
-	public void main()
+	public static void main(String args[])
 	{
-		System.out.println(str);
+		System.out.println("Hello, world!");
 	}
-
 }
