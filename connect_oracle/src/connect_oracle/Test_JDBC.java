@@ -6,6 +6,7 @@
 package connect_oracle;
 
 import java.sql.*;
+import java.util.Scanner;
 
 /**
  * @author 1HBLSQT
@@ -19,50 +20,72 @@ public class Test_JDBC {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		ResultSet rs=null;
-		Statement stmt=null;
-		Connection conn=null;
+		Connection con = null; //创建一个数据库连接
+		PreparedStatement pre = null;//创建预编译语句对象，一般不使用Statement
+		ResultSet rs = null;//创建一个结果集对象
+
+		Scanner scan=new Scanner(System.in);
 		try 
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			// new oracle.jdbc.river.OracleDriver();
-			conn=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:yuewei", "scott", "tiger");
-			stmt=conn.createStatement();
-			rs=stmt.executeQuery("select * from dept");
+			System.out.println("开始尝试连接数据库...");
+			
+			//读取数据库地址
+			System.out.println("请输入数据库地址和名称，格式如下：\n 数据库地址:端口号:数据库名称");
+			String url = "jdbc:oracle:thin:@"+scan.next();
+			
+			//读取用户名和密码
+			System.out.print("\n 用户名:");
+			String usr=scan.next();
+			System.out.print("\n 密码:");
+			String pwd=scan.next();
+
+			//创建数据库连接
+			con=DriverManager.getConnection(url,usr,pwd);
+			System.out.println("数据库连接成功！");
+
+			//执行sql查询
+			String sql = "select * from fj where name = 'fj'";
+			pre = con.prepareStatement(sql);
+			rs=pre.executeQuery();
+			
 			while(rs.next())
 			{
-				System.out.println(rs.getString("deptno"));
+				System.out.println(rs.getString("name"));
 			}
 		} catch (ClassNotFoundException e) 
-		{
+		  {
 			e.printStackTrace();
-		 } catch (SQLException e)
-		{
+		  }
+		  catch (SQLException e)
+		  {
 			 e.printStackTrace();
-		}finally 
-		{
+		  }
+		  finally 
+		  {
 			 try 
-			 {
+			 {// 逐一关闭，后创建的首先关闭
 				  if (rs != null) 
 				  {
 					  rs.close();
 					  rs=null;
 				  }
-				  if (stmt!=null) 
+				  if (pre!=null) 
 				  {
-					  stmt.close();
-					  stmt=null;
+					  pre.close();
+					  pre=null;
 				  }
-				  if (conn!=null) 
+				  if (con!=null) 
 				  {
-					  conn.close();
-					  conn=null;
+					  con.close();
+					  con=null;
 				  }
 				  
-			  } catch (SQLException e) 
-			 {
+			  }
+			 catch (SQLException e) 
+			  {
 				  e.printStackTrace();
-			 }
-		  }
-		}
+			  }
+		 }
+	   }
 	}
