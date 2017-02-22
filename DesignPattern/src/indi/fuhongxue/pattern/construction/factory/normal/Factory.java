@@ -18,4 +18,20 @@ public class Factory {
 		}
 	}
 	
+	public FactoryInterface produceOne() {
+		return new FactoryClass1();
+	}
+	
+	public FactoryInterface produceTwo() {
+		return new FactoryClass2();
+	}
+	
+	public static FactoryInterface staticProduceOne() {
+		return new FactoryClass1();
+	}
+	
+	public static FactoryInterface staticProduceTwo() {
+		return new FactoryClass2();
+	}
+
 }
