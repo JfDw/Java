@@ -10,4 +10,4 @@
  * (3) Director: 调用具体创建者来创建复杂对象的各个部分，不涉及具体产品的信息，只复杂保证对象各部分完整创建或按某种顺序创建
  * (4) Product: 要创建的复杂对象
  */
-package indi.fuhongxue.pattern.constructor;
+package indi.fuhongxue.pattern.construction.constructor;

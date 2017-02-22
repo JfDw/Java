@@ -6,4 +6,4 @@
  * @author 1HBLSQT
  *
  */
-package indi.fuhongxue.pattern.constructor.person;
+package indi.fuhongxue.pattern.construction.constructor.person;
