@@ -21,7 +21,7 @@ public class ArrayElement
 	{
 		int index = 0;
 		
-		for(int i = 0 ; i< array.length;  i++)
+		for(int i = 0 ; i < array.length ;  i++)
 		{
 			if(elementRemoved == array[i])
 			{
@@ -35,12 +35,31 @@ public class ArrayElement
 		return index;
 	}
 	
-	public static void printArray(int[] array,int length)
+	/**
+	 * my own method
+	 * 
+	 * @param array
+	 * 		 input array
+	 * @param element
+	 * 		 element to be deleted
+	 * @return 
+	 * 		 the length of array
+	 */
+	public static int remove(int[] array, int element)
 	{
-		for(int i =0;i<length;i++)
+		//indicate to the element to be removed
+		int index = 0;
+		
+		for(int i = 0; i < array.length; i++)
 		{
-			System.out.print(" "+array[i]);
+			if(array[i] != element)
+			{
+				array[index] = array[i];
+				index++;
+			}
 		}
+		
+		return index;
 	}
 
 }
