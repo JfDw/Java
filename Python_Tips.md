@@ -30,5 +30,6 @@ is表示同一个对象（同一个引用）
 
 原因是：logging.config.fileConfig()默认入参disable_existing_loggers=True，这样会将现有logger都失效掉，所有其他模块的logger配置都清空了，不能打印出日志
 
-1. 日志中要打印traceback调用栈
-`logger.error('Failed to open file', exc_info=True)` 设置exc_info=True可以在日志中打印调用栈
+1. 日志中要打印traceback调用栈：
+`logger.error('Failed to open file', exc_info=True)` 
+设置exc_info=True可以在日志中打印调用栈
