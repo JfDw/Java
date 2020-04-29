@@ -19,3 +19,9 @@ NaN是Pandas中的数值类型，表示数据缺失，是一种float类型，可
 2. is和==的区别
 is表示同一个对象（同一个引用）
 ==表示值（内容）是否相同
+
+## 日志系统
+https://stackoverflow.com/questions/15727420/using-logging-in-multiple-modules
+最差实践：创建一个全局logger，然后各个模块共用这个logger
+最佳实践：不要创建全局logger，而是在启动时设置logging相关配置，然后哪里需要哪里创建logger
+原因是：logging.config.fileConfig()默认入参disable_existing_loggers=True，这样会将现有logger都失效掉，所有其他模块的logger配置都清空了，不能打印出日志
