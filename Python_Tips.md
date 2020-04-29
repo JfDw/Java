@@ -10,3 +10,12 @@ Python学习点滴
 `source venv/bin/activate`
 3. 安装依赖库
 `pip install -r requirements.txt`
+
+## 数据处理
+1. nan和None的区别
+NaN是Pandas中的数值类型，表示数据缺失，是一种float类型，可以参与数值运算（NaN与其他数值运算得到仍然是NaN），可以用pd.isnull()和pd.notnull()方法检测NaN；
+而None是Python的一种特殊对象，表示不存在和空的对象，是一种不可变对象
+
+2. is和==的区别
+is表示同一个对象（同一个引用）
+==表示值（内容）是否相同
