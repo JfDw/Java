@@ -33,3 +33,21 @@ is表示同一个对象（同一个引用）
 1. 日志中要打印traceback调用栈：
 `logger.error('Failed to open file', exc_info=True)` 
 设置exc_info=True可以在日志中打印调用栈
+
+
+## Requirements.txt
+有两种方式自动生成requirements.txt，方便用于安装：
+
+1. pip freeze 
+
+这种方式会将虚拟环境中的所有库都列在requirements.txt中，包括不需要的库
+
+2. pipreqs
+
+只导出所需要的库到requirements.txt中，使用命令如下：
+
+`pipreqs.exe .\dataloader\ --encoding='utf-8' --pypi-server http://cmc-cd-mirror.rnd.huawei.com/pypi/simple/ --force `
+
+或者 
+
+`pipreqs.exe .\dataloader\ --encoding='utf-8' --use-local --force `
