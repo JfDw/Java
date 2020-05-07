@@ -11,6 +11,21 @@ import之后，可以根据`module_name.__file__`查看该module的文件路径
 
 可以用`sys.path`查看当前的import路径有哪些
 
+## import的原理
+- import <module_name>
+- from <module_name> import <name(s)>
+- from <module_name> import <name> as <alt_name>
+- import <module_name> as <alt_name>
+  
+ 一个小技巧，检查module是否存在：
+ ```python
+ try:
+...     # Non-existent module
+...     import def
+... except ImportError:
+...     print('Module not found')
+ ```
+
 ## 查看函数的汇编代码
 ```python
 import dis
