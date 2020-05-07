@@ -1,6 +1,27 @@
 # Python Tips
 Python学习点滴
 
+## Module
+import之后，可以根据`module_name.__file__`查看该module的文件路径
+
+`import`会查找以下三个地方：
+- 当前路径
+- `pythonpath`
+- python的安装路径
+
+可以用`sys.path`查看当前的import路径有哪些
+
+## 查看函数的汇编代码
+```python
+import dis
+dis.dis(function_name)
+```
+
+## 多线程multiprocessing
+multiprocessing模块在linux和windows系统中的行为不一致，要务必注意，在window系统中，只能在`if __name__ == '__main__'`之后创建子进程
+
+可参考：https://segmentfault.com/a/1190000013681586
+
 ## 虚拟环境
 1. 安装python虚拟环境
 执行以下命令，将在当前路径下安装一个完整的python虚拟环境，python版本号，取决当前python的版本
