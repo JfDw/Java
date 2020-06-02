@@ -87,3 +87,16 @@ is表示同一个对象（同一个引用）
 或者 
 
 `pipreqs.exe .\dataloader\ --encoding='utf-8' --use-local --force `
+
+## Flask
+
+### 启动Flask App
+- 设置环境变量：FLASK_APP
+Linux: `export FLASK_APP=hellp.py`; Windows: `set FLASK_APP=hellp.py`; Windows_Powershell:`$env:FALSK_APP=hellp.py`
+- 启动Flask：`python -m flask run`
+
+设置FALSK为开发模式： `export FLASK_ENV=development`
+
+设置FALSK为生产模式： `export FLASK_ENV=production`
+
+【生产模式下，不要使用flask自带的WSGI服务器（`flask run`），而是应该使用专用的生产WSGI服务器，例如Waitress, Gunicorn, uWSGI等】
