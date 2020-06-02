@@ -96,6 +96,7 @@ Linux: `export FLASK_APP=hellp.py`; Windows: `set FLASK_APP=hellp.py`; Windows_P
 - 启动Flask：`python -m flask run`
 
 设置FALSK为开发模式： `export FLASK_ENV=development`
+【在开发者模式下，只有本机才可以访问服务，而其他机器不行，这是开发模式的缺省设置，可以在命令行加上`--host=0.0.0.0`即可：`flask run --host=0.0.0.0`】
 
 设置FALSK为生产模式： `export FLASK_ENV=production`
 
