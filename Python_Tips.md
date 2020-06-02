@@ -100,3 +100,9 @@ Linux: `export FLASK_APP=hellp.py`; Windows: `set FLASK_APP=hellp.py`; Windows_P
 设置FALSK为生产模式： `export FLASK_ENV=production`
 
 【生产模式下，不要使用flask自带的WSGI服务器（`flask run`），而是应该使用专用的生产WSGI服务器，例如Waitress, Gunicorn, uWSGI等】
+### 生产环境上启动Flask
+```python
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
+```
