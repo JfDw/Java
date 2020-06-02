@@ -106,3 +106,8 @@ if __name__ == "__main__":
     from waitress import serve
     serve(app, host="0.0.0.0", port=8080)
 ```
+或者使用命令行：
+```shell
+$ waitress-serve --call 'flaskr:create_app'
+Serving on http://0.0.0.0:8080
+```
