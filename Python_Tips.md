@@ -1,6 +1,8 @@
 # Python Tips
 Python学习点滴
 
+[TOC]
+
 ## Module
 import之后，可以根据`module_name.__file__`查看该module的文件路径
 
