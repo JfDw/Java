@@ -114,3 +114,8 @@ if __name__ == "__main__":
 $ waitress-serve --call 'flaskr:create_app'
 Serving on http://0.0.0.0:8080
 ```
+
+## __init__.py的作用
+- 作为Python中的包（Package）标识，包是包含python模块（module）的文件夹，一个模块为一个py文件，里面定义了函数和类，包相当于多个模块的父节点。当文件夹下有__init__.py文件时，表示当前文佳佳时一个python包，其下的模块都可以通过这个包引入代码中。
+- __init__.py文件可以为空，但是如果要使用 `from package1 import *`这种写法，需要在__init__.py中定义__all__：`__all__ = ['file1', 'file2']`
+- 
